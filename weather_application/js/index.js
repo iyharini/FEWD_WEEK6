@@ -1,27 +1,27 @@
-//store the breakpoint Celsius value in a variable
-var breakpointCelsius = 20;
 
-//write a Celsius-Fahrenheit converter function
-//T(°F) = T(°C) × 1.8 + 32
-function convertToFahrenheit(celsius){
-
-}
-
-//write an image display function for hot or cold images
-//to update the #weatherImage in the HTML
-function updateImage(celsius){
-
-}
-
-//write a function to update the result message that is displayed below the image
-//the message template should be:
-// "N°C (N°F). That's (hot OR cold)!"
-function updateResultMessage(celsius, fahrenheit){
-
-}
-
-//write a click handler function for the submit button that brings everything together
-$("#submit").click(function(){
-
-
+$(document).ready(function() {
+  $("#submit").click(function convertToFahrenheit(celsius) {
+      var temperature = $("#temp").val();
+      var fahrenheit = (temperature * 1.8) + 32;
+      console.log(fahrenheit)
+      updateImage(temperature);
+      updateResultMessage(temperature, fahrenheit);
+    });
+    function updateResultMessage(temperature, fahrenheit){
+      if (temperature >= "20") {
+        $("#resultMessage").append("<p>" +fahrenheit + "N°C (N°F). That's hot!"+"</p>");
+        console.log("OK");
+      }
+      else {
+        $("#resultMessage").append("<p>" +fahrenheit + "N°C (N°F). That's cold!"+"</p>");
+      }
+    }
+    function updateImage(temperature) {
+      if (temperature >= "20") {
+        $("#weatherImage").attr("src", "images/hot.jpeg");
+      }
+      else {
+        $("#weatherImage").attr("src", "images/cold.jpeg");
+      }
+    }
 });
