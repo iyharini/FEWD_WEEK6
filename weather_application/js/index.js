@@ -9,11 +9,11 @@ $(document).ready(function() {
     });
     function updateResultMessage(temperature, fahrenheit){
       if (temperature >= "20") {
-        $("#resultMessage").append("<p>" +fahrenheit + "N°C (N°F). That's hot!"+"</p>");
+        $("#resultMessage").html("<p>" +fahrenheit + "N°C (N°F). That's hot!"+"</p>");
         console.log("OK");
       }
       else {
-        $("#resultMessage").append("<p>" +fahrenheit + "N°C (N°F). That's cold!"+"</p>");
+        $("#resultMessage").html("<p>" +fahrenheit + "N°C (N°F). That's cold!"+"</p>");
       }
     }
     function updateImage(temperature) {
